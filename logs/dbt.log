@@ -39,3 +39,29 @@ Runtime Error
   
 [0m20:52:45.164098 [debug] [MainThread]: Command `dbt run` failed at 20:52:45.163308 after 0.23 seconds
 [0m20:52:45.165025 [debug] [MainThread]: Flushing usage events
+[0m20:02:39.207831 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 20:02:39.330324 | c23d7664-ef3e-4529-b718-3688517a7d9d ==============================
+[0m20:02:39.330324 [info ] [MainThread]: Running with dbt=1.11.7
+[0m20:02:39.331592 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\Admin\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt seed', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m20:02:39.332182 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\Admin\OneDrive\Documents\Github\dbt-udemy\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m20:02:39.333415 [debug] [MainThread]: Command `dbt seed` failed at 20:02:39.333262 after 0.19 seconds
+[0m20:02:39.333865 [debug] [MainThread]: Flushing usage events
+[0m13:16:08.302290 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 13:16:08.427846 | 8ec40a37-bb48-478c-96cd-98a44c6e770d ==============================
+[0m13:16:08.427846 [info ] [MainThread]: Running with dbt=1.11.7
+[0m13:16:08.428962 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\Admin\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'invocation_command': 'dbt compile', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m13:16:08.429542 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\Admin\OneDrive\Documents\Github\dbt-udemy\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m13:16:08.430983 [debug] [MainThread]: Command `dbt compile` failed at 13:16:08.430853 after 0.20 seconds
+[0m13:16:08.431402 [debug] [MainThread]: Flushing usage events

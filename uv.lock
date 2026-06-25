@@ -553,6 +553,7 @@ dependencies = [
     { name = "dagster-dbt" },
     { name = "dagster-webserver" },
     { name = "dbt-autofix" },
+    { name = "dbt-colibri" },
     { name = "dbt-core" },
     { name = "dbt-snowflake" },
 ]
@@ -562,8 +563,22 @@ requires-dist = [
     { name = "dagster-dbt", specifier = "~=0.28.0" },
     { name = "dagster-webserver", specifier = "~=1.12.0" },
     { name = "dbt-autofix", specifier = "~=0.18.0" },
+    { name = "dbt-colibri", specifier = ">=0.2.8" },
     { name = "dbt-core", specifier = "~=1.11.0" },
     { name = "dbt-snowflake", specifier = "~=1.11.0" },
+]
+
+[[package]]
+name = "dbt-colibri"
+version = "0.2.8"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "click" },
+    { name = "sqlglot", extra = ["rs"] },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/da/3b/cbceef172e463e5e984568f6ea63f4e894ac93db89755b6c4d08e5935e9b/dbt_colibri-0.2.8.tar.gz", hash = "sha256:7c0993c4e262a12071b37e7b955384a83df9d817cf5714a60a4eda05aeccc9fc", size = 967464, upload-time = "2026-01-05T21:58:51.777Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/36/7a/350f5c85d876fdcfcfb53414b1a9f9e9619beb678983248cfc620b057a62/dbt_colibri-0.2.8-py3-none-any.whl", hash = "sha256:d956ab671b04a6c0774472a2d7a8e144535d995f5ba9a13cd41c86e514d126da", size = 958254, upload-time = "2026-01-05T21:58:53.304Z" },
 ]
 
 [[package]]
