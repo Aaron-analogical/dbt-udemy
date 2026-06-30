@@ -1,5 +1,6 @@
 models:
   - name: dim_listings_cleansed
+    description: This table contains the cleansed listings data. It is a dimension table that contains the listings data. It is used to join with the fact tables.
     data_tests:
       - minimum_row_count:
           arguments:
@@ -7,6 +8,7 @@ models:
           severity: warn
     columns:
       - name: listing_id
+        description: The listing's id. References the listing table.
         data_tests:
           - unique
           - not_null
@@ -30,10 +32,12 @@ models:
                        'Hotel room']
 
       - name: minimum_nights
+        description: '{{ doc("dim_listing_cleansed__minimum_nights") }}'
         data_tests:
           - positive_values
 
   - name: dim_hosts_cleansed
+    description: This table contains the cleansed hosts data. It is a dimension table that contains the hosts data. It is used to join with the fact tables.
     config:
       contract:
         enforced: true
@@ -83,3 +87,22 @@ models:
         data_tests:
           - accepted_values:
               values: ['positive', 'negative', 'neutral']
+
+  - name: dim_listings_w_hosts
+    tests: 
+      - dbt_expectations.expect_table_row_count_to_equal_other_table:
+          compare_model: "{{ source('airbnb', 'listings') }}"
+    
+    columns:
+      - name: price
+        tests:
+          - dbt_expectations.expect_column_quantile_values_to_be_between:
+              quantile: .99
+              min_value: 50
+              max_value: 500
+          - dbt_expectations.expect_column_max_to_be_between:
+              max_value: 5000
+              config:
+                severity: warn
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: number
